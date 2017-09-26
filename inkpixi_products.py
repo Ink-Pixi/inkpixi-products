@@ -34,8 +34,11 @@ class InkPixiProducts(QMainWindow, Ui_MainWindow):
         self.company_id = company.company_id
         
     def btn_test_clicked(self):
-        print(self.company_id)
-        print(ip_data.get_sku_info('A101', self.company_id))
+        try:
+            print(self.company_id)
+            print(ip_data.get_sku_info('A101', self.company_id))
+        except BaseException as e:
+            print(e)
 
 class Company(object):
     #this class sets the company name and ID for the application
