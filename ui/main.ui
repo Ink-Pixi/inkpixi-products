@@ -516,8 +516,8 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
    <widget class="QPushButton" name="btn_test">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>90</y>
+      <x>190</x>
+      <y>50</y>
       <width>75</width>
       <height>23</height>
      </rect>
@@ -531,7 +531,7 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
      <rect>
       <x>30</x>
       <y>30</y>
-      <width>221</width>
+      <width>131</width>
       <height>44</height>
      </rect>
     </property>
@@ -559,6 +559,29 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
       </widget>
      </item>
     </layout>
+   </widget>
+   <widget class="QLabel" name="lbl_search">
+    <property name="geometry">
+     <rect>
+      <x>720</x>
+      <y>20</y>
+      <width>46</width>
+      <height>13</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Search:</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="le_sku">
+    <property name="geometry">
+     <rect>
+      <x>720</x>
+      <y>40</y>
+      <width>191</width>
+      <height>20</height>
+     </rect>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
