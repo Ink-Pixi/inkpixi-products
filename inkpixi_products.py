@@ -3,6 +3,7 @@ import ctypes
 from data import inkpixi_products_data as ip_data
 from ui.main import Ui_MainWindow
 from PyQt5.QtWidgets import QApplication, QMainWindow, QCompleter
+from PyQt5.QtCore import Qt
 
 class InkPixiProducts(QMainWindow, Ui_MainWindow):
     
@@ -11,10 +12,9 @@ class InkPixiProducts(QMainWindow, Ui_MainWindow):
         
         self.setupUi(self)
         
-        
-        
         self.cbox_company.addItems(self.get_companies())
         self.cbox_company.currentIndexChanged.connect(self.cbox_company_changed)
+        
         
         self.btn_test.clicked.connect(self.btn_test_clicked)
         
@@ -33,10 +33,23 @@ class InkPixiProducts(QMainWindow, Ui_MainWindow):
         
         self.company_id = company.company_id
         
+        self.sku_completer(self.company_id)
+        
+    def sku_completer(self, company_id):
+        
+        root_skus = ip_data.get_sku_names(company_id)
+        
+        #set up an auto complete for the sku line edit box
+        rsku_completer = QCompleter(root_skus)
+        rsku_completer.setCompletionMode(QCompleter.InlineCompletion)
+        rsku_completer.setCompletionMode(QCompleter.UnfilteredPopupCompletion)
+        rsku_completer.setCaseSensitivity(Qt.CaseInsensitive)       
+        
+        self.le_sku.setCompleter(rsku_completer) 
+
     def btn_test_clicked(self):
         try:
-            print(self.company_id)
-            print(ip_data.get_sku_info('A101', self.company_id))
+            print(ip_data.get_sku_names(self.company_id))
         except BaseException as e:
             print(e)
 
