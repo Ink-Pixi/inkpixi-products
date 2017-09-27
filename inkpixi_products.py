@@ -10,9 +10,10 @@ class InkPixiProducts(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super(InkPixiProducts, self).__init__()
         
+        
         self.setupUi(self)
         
-        self.cbox_company.addItems(self.get_companies())
+        self.get_companies()
         self.cbox_company.currentIndexChanged.connect(self.cbox_company_changed)
         
         
@@ -20,31 +21,28 @@ class InkPixiProducts(QMainWindow, Ui_MainWindow):
         
     def get_companies(self):
         lst_companies = ip_data.get_companies()
-
-        lst_company_name = []
-        for company in lst_companies:
-            lst_company_name.append(company[1])
         
-        return lst_company_name
+        for company in lst_companies:
+            self.cbox_company.addItem(company[1], company[0])
     
     def cbox_company_changed(self):
+        self.company = Company(self.cbox_company.currentText(), self.cbox_company.itemData(self.cbox_company.currentIndex()))
+
         try:
-            company = Company(self.cbox_company.currentText())
-    
-            self.sku_completer(company.company_id)
-            
-            if company.company_id == 2:
+            self.sku_completer()
+             
+            if self.company.company_id == 2:
                 self.lblLogo.setPixmap(QtGui.QPixmap(":/images/images/retail_logo.png"))
-            elif company.company_id == 3:
+            elif self.company.company_id == 3:
                 self.lblLogo.setPixmap(QtGui.QPixmap(":/images/images/wholesale_logo.png"))
             else:
                 self.lblLogo.setPixmap(QtGui.QPixmap(":/images/images/pixi_logo_new.png"))
         except BaseException:
             QMessageBox.information(self, 'Chose Company', 'Please choose a valid company.')
-        
-    def sku_completer(self, company_id):
-        
-        root_skus = ip_data.get_sku_names(company_id)
+          
+    def sku_completer(self):
+
+        root_skus = ip_data.get_sku_names(self.company.company_id)
         
         #set up an auto complete for the sku line edit box
         rsku_completer = QCompleter(root_skus)
@@ -55,26 +53,21 @@ class InkPixiProducts(QMainWindow, Ui_MainWindow):
         self.le_sku.setCompleter(rsku_completer) 
 
     def btn_test_clicked(self):
-        try:
-            print(ip_data.get_sku_names(self.company_id))
-        except BaseException as e:
-            print(e)
+        self.test_combo()
+#         try:
+#             print(ip_data.get_sku_names(self.company.company_id))
+#         except BaseException as e:
+#             print(e)
+            
+    
+    def test_combo(self):
+        self.cbox_company.addItem('test', 12)
 
 class Company(object):
     #this class sets the company name and ID for the application
-    def __init__(self, company_name):
-        self.company_name = company_name
-        self.company_id = self.get_company_id(company_name) 
-
-    def get_company_id(self, company_name):
-        #get a list of the companies from the database for reference
-        self.lst_companies = ip_data.get_companies()
-        #based on the text of the company name sent loop through the list to determine id and Name
-        for company in self.lst_companies:
-            if company_name == company[1]:
-                company_id = company[0]
-        return company_id
-    
+    def __init__(self, in_company_name, in_company_id):
+        self.company_name = in_company_name
+        self.company_id = in_company_id
 
 if __name__ == '__main__':
     myappid = 'InkPixi Products'
