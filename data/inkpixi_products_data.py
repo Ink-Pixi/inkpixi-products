@@ -1,10 +1,14 @@
 import mysql.connector
+import json
 from contextlib import closing
 from PyQt5.QtWidgets import QMessageBox
 
 def connect_mysql():
-    conn = mysql.connector.connect(user = 'root', password = 'rowsby01', host = 'APPSERVER1', database = 'inkpixi_art', raise_on_warnings = True) 
-   
+    with open('config.json', 'r') as f:
+        config = json.load(f)
+        
+    conn = mysql.connector.connect(user = config['user'], password = config['password'], host = config['host'], database = config['database'], raise_on_warnings = True) 
+    
     return conn 
 
 def get_companies():
