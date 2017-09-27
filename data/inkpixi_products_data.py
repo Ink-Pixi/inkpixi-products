@@ -31,14 +31,10 @@ def get_sku_names(company_id):
     cur = con.cursor()
     lst_results = []
     
-    try:
-        with closing(cur) as db:
-            db.callproc('get_skus_names', [company_id])
-            for result in db.stored_results():
-                results = result.fetchall()
-    except BaseException as e:
-        throw_db_error(e)
-        
+    with closing(cur) as db:
+        db.callproc('get_skus_names', [company_id])
+        for result in db.stored_results():
+            results = result.fetchall()
         
     for result in results:
         lst_results.append(result[0]) 

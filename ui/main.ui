@@ -6,12 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1111</width>
+    <width>1115</width>
     <height>674</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Products, products, products for everyone.</string>
   </property>
   <property name="windowIcon">
    <iconset resource="resources.qrc">
@@ -513,7 +513,7 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
         <widget class="QComboBox" name="cbox_company">
          <property name="minimumSize">
           <size>
-           <width>0</width>
+           <width>125</width>
            <height>22</height>
           </size>
          </property>
@@ -547,7 +547,14 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="le_sku"/>
+          <widget class="QLineEdit" name="le_search_sku"/>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btn_test">
+           <property name="text">
+            <string>Test</string>
+           </property>
+          </widget>
          </item>
          <item>
           <spacer name="horizontalSpacer_2">
@@ -582,19 +589,166 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
         <attribute name="title">
          <string>Tab 1</string>
         </attribute>
-        <widget class="QPushButton" name="btn_test">
+        <widget class="QWidget" name="layoutWidget_2">
+         <property name="geometry">
+          <rect>
+           <x>240</x>
+           <y>20</y>
+           <width>121</width>
+           <height>42</height>
+          </rect>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <item>
+           <widget class="QLabel" name="lbl_root_color">
+            <property name="text">
+             <string>Root Color:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="le_root_color">
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="layoutWidget_3">
+         <property name="geometry">
+          <rect>
+           <x>107</x>
+           <y>20</y>
+           <width>121</width>
+           <height>42</height>
+          </rect>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_4">
+          <item>
+           <widget class="QLabel" name="lbl_root_sku_name">
+            <property name="text">
+             <string>Sku Name:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="le_root_sku_name">
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="layoutWidget_4">
+         <property name="geometry">
+          <rect>
+           <x>460</x>
+           <y>20</y>
+           <width>121</width>
+           <height>42</height>
+          </rect>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_5">
+          <item>
+           <widget class="QLabel" name="lbl_variable_syntax">
+            <property name="text">
+             <string>Variabl Syntax:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="le_variable_syntax">
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="layoutWidget_5">
+         <property name="geometry">
+          <rect>
+           <x>380</x>
+           <y>20</y>
+           <width>71</width>
+           <height>42</height>
+          </rect>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_6">
+          <item>
+           <widget class="QLabel" name="lbl_variable_count">
+            <property name="text">
+             <string>Variables:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QSpinBox" name="sbox_variables">
+            <property name="font">
+             <font>
+              <pointsize>12</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QCheckBox" name="chk_active">
+         <property name="geometry">
+          <rect>
+           <x>610</x>
+           <y>40</y>
+           <width>70</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font-weight: bold;
+font-size: 12px;
+</string>
+         </property>
+         <property name="text">
+          <string>Active</string>
+         </property>
+        </widget>
+        <widget class="QWidget" name="">
          <property name="geometry">
           <rect>
            <x>20</x>
-           <y>40</y>
-           <width>75</width>
-           <height>23</height>
+           <y>20</y>
+           <width>71</width>
+           <height>42</height>
           </rect>
          </property>
-         <property name="text">
-          <string>Test</string>
-         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <widget class="QLabel" name="lbl_root_sku">
+            <property name="text">
+             <string>SKU:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="le_root_sku">
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </widget>
+        <zorder>le_root_sku</zorder>
+        <zorder>lbl_root_sku</zorder>
+        <zorder>layoutWidget_2</zorder>
+        <zorder>layoutWidget_3</zorder>
+        <zorder>cbox_company</zorder>
+        <zorder>layoutWidget_4</zorder>
+        <zorder>layoutWidget_5</zorder>
+        <zorder>chk_active</zorder>
        </widget>
        <widget class="QWidget" name="tab_2">
         <attribute name="title">
@@ -611,7 +765,7 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1111</width>
+     <width>1115</width>
      <height>21</height>
     </rect>
    </property>
