@@ -28,12 +28,9 @@ class InkPixiProducts(QMainWindow, Ui_MainWindow):
         return lst_company_name
     
     def cbox_company_changed(self):
-        company = Company()
-        company.set_company(self.cbox_company.currentText())
-        
-        self.company_id = company.company_id
-        
-        self.sku_completer(self.company_id)
+        company = Company(self.cbox_company.currentText())
+
+        self.sku_completer(company.company_id)
         
     def sku_completer(self, company_id):
         
@@ -55,24 +52,18 @@ class InkPixiProducts(QMainWindow, Ui_MainWindow):
 
 class Company(object):
     #this class sets the company name and ID for the application
-    def __init__(self):
-        self.company_name = None
-        self.company_id = None
+    def __init__(self, company_name):
+        self.company_name = company_name
+        self.company_id = self.get_company_id(company_name) 
+
+    def get_company_id(self, company_name):
         #get a list of the companies from the database for reference
         self.lst_companies = ip_data.get_companies()
-    
-    def company_name(self):
-        return self.company_name
-        
-    def company_id(self):
-        return self.company_id
-            
-    def set_company(self, in_company):
         #based on the text of the company name sent loop through the list to determine id and Name
         for company in self.lst_companies:
-            if in_company == company[1]:
-                self.company_name = company[1]
-                self.company_id = company[0]
+            if company_name == company[1]:
+                company_id = company[0]
+        return company_id
     
 
 if __name__ == '__main__':
