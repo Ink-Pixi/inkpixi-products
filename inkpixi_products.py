@@ -62,7 +62,7 @@ class InkPixiProducts(QMainWindow, Ui_MainWindow):
     
     def test_combo(self):
         self.cbox_company.addItem('test', 12)
-        #blah blah blah testing.
+
 class Company(object):
     #this class sets the company name and ID for the application
     def __init__(self, in_company_name, in_company_id):
