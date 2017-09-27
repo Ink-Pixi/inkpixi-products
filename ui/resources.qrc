@@ -1,5 +1,7 @@
 <RCC>
   <qresource prefix="images">
+    <file>images/retail_logo.png</file>
+    <file>images/wholesale_logo.png</file>
     <file>images/checkbox.png</file>
     <file>images/down_arrow.png</file>
     <file>images/handle.png</file>
