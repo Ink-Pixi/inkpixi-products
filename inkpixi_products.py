@@ -2,9 +2,9 @@ import sys
 import ctypes
 from data import inkpixi_products_data as ip_data
 from ui.main import Ui_MainWindow
-from PyQt5.QtWidgets import QApplication, QMainWindow, QCompleter
+from PyQt5.QtWidgets import QApplication, QMainWindow, QCompleter, QMessageBox
 from PyQt5.QtCore import Qt
-
+from PyQt5 import QtGui
 class InkPixiProducts(QMainWindow, Ui_MainWindow):
     
     def __init__(self):
@@ -28,9 +28,19 @@ class InkPixiProducts(QMainWindow, Ui_MainWindow):
         return lst_company_name
     
     def cbox_company_changed(self):
-        company = Company(self.cbox_company.currentText())
-
-        self.sku_completer(company.company_id)
+        try:
+            company = Company(self.cbox_company.currentText())
+    
+            self.sku_completer(company.company_id)
+            
+            if company.company_id == 2:
+                self.lblLogo.setPixmap(QtGui.QPixmap(":/images/images/retail_logo.png"))
+            elif company.company_id == 3:
+                self.lblLogo.setPixmap(QtGui.QPixmap(":/images/images/wholesale_logo.png"))
+            else:
+                self.lblLogo.setPixmap(QtGui.QPixmap(":/images/images/pixi_logo_new.png"))
+        except BaseException:
+            QMessageBox.information(self, 'Chose Company', 'Please choose a valid company.')
         
     def sku_completer(self, company_id):
         
