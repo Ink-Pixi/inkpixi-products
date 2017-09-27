@@ -1,7 +1,6 @@
 import mysql.connector
 from contextlib import closing
 from PyQt5.QtWidgets import QMessageBox
-from PyQt5.QtGui import QIcon
 
 def connect_mysql():
     conn = mysql.connector.connect(user = 'root', password = 'rowsby01', host = 'APPSERVER1', database = 'inkpixi_art', raise_on_warnings = True) 
