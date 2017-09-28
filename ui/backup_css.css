@@ -1,3 +1,10 @@
+QLabel
+{
+/*	color: rgb(170, 0, 0);*/
+	color: rgb(0, 0, 0);
+	font-weight: bold;
+	font-size: 12px;
+}
 QToolTip
 {
 	 border: 1px solid black;
@@ -91,6 +98,8 @@ QLineEdit
 	border-style: solid;
 	border: 1px solid #1e1e1e;
 	border-radius: 5;
+	font-weight: bold;
+	font-size: 12px;
 }
 
 QPushButton
@@ -165,7 +174,7 @@ QComboBox::drop-down
 
 QComboBox::down-arrow
 {
-	 image: url(ui/image/down_arrow.png);
+	 image: url(ui/images/down_arrow.png);
 }
 
 QGroupBox:focus
@@ -341,7 +350,7 @@ QMainWindow::separator:hover
 QToolBar::handle
 {
 	 spacing: 3px; /* spacing between items in the tool bar */
-	 background: url(ui/image/handle.png);
+	 background: url(ui/images/handle.png);
 }
 
 QMenu::separator
@@ -397,7 +406,7 @@ QTabBar::tab:first:!selected
 
 
 	border-top-left-radius: 3px;
-}
+}
 
 QTabBar::tab:!selected
 {
@@ -461,7 +470,7 @@ QRadioButton::indicator:hover, QCheckBox::indicator:hover
 
 QCheckBox::indicator:checked
 {
-	image: url(ui/image/checkbox.png);
+	image: url(ui/images/checkbox.png);
 }
 
 QCheckBox::indicator:disabled, QRadioButton::indicator:disabled

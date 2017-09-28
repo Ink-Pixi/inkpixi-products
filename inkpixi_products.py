@@ -5,8 +5,9 @@ from ui.main import Ui_MainWindow
 from PyQt5.QtWidgets import QApplication, QMainWindow, QCompleter, QMessageBox
 from PyQt5.QtCore import Qt
 from PyQt5 import QtGui
+
+
 class InkPixiProducts(QMainWindow, Ui_MainWindow):
-    
     def __init__(self):
         super(InkPixiProducts, self).__init__()
 
@@ -75,6 +76,7 @@ class InkPixiProducts(QMainWindow, Ui_MainWindow):
             self.sbox_variables.setValue(lst_sku_info[0][3])
             self.le_variable_syntax.setText(lst_sku_info[0][4])
             self.chk_active.setChecked(lst_sku_info[0][5])
+            
 
 class Company(object):
     #this class sets the company name and ID for the application

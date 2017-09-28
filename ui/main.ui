@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1115</width>
-    <height>674</height>
+    <width>1111</width>
+    <height>769</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -118,6 +118,8 @@ QLineEdit
 	border-style: solid;
 	border: 1px solid #1e1e1e;
 	border-radius: 5;
+	font-weight: bold;
+	font-size: 12px;
 }
 
 QPushButton
@@ -497,275 +499,287 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
 }            </string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="layoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>2</y>
-      <width>1081</width>
-      <height>631</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout">
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_2">
-       <item>
-        <widget class="QComboBox" name="cbox_company">
-         <property name="minimumSize">
-          <size>
-           <width>125</width>
-           <height>22</height>
-          </size>
-         </property>
-         <item>
-          <property name="text">
-           <string>-- choose company --</string>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <layout class="QVBoxLayout" name="vlay_main">
+      <item>
+       <layout class="QHBoxLayout" name="hlay_header">
+        <item>
+         <widget class="QComboBox" name="cbox_company">
+          <property name="minimumSize">
+           <size>
+            <width>125</width>
+            <height>22</height>
+           </size>
           </property>
-         </item>
-        </widget>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout">
-         <item>
-          <spacer name="horizontalSpacer">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item>
-          <widget class="QLabel" name="lbl_search">
+          <item>
            <property name="text">
-            <string>Search:</string>
+            <string>-- choose company --</string>
            </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="le_search_sku"/>
-         </item>
-         <item>
-          <widget class="QPushButton" name="btn_test">
-           <property name="text">
-            <string>Test</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <spacer name="horizontalSpacer_2">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <widget class="QLabel" name="lblLogo">
-         <property name="text">
-          <string/>
-         </property>
-         <property name="pixmap">
-          <pixmap resource="resources.qrc">:/images/images/pixi_logo_new.png</pixmap>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <widget class="QTabWidget" name="tabWidget">
-       <widget class="QWidget" name="tab">
-        <attribute name="title">
-         <string>Tab 1</string>
-        </attribute>
-        <widget class="QWidget" name="layoutWidget_2">
-         <property name="geometry">
-          <rect>
-           <x>240</x>
-           <y>20</y>
-           <width>121</width>
-           <height>42</height>
-          </rect>
-         </property>
-         <layout class="QVBoxLayout" name="verticalLayout_3">
+          </item>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="hlay_search_bar">
           <item>
-           <widget class="QLabel" name="lbl_root_color">
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLabel" name="lbl_search">
             <property name="text">
-             <string>Root Color:</string>
+             <string>Search:</string>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QLineEdit" name="le_root_color">
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
+           <widget class="QLineEdit" name="le_search_sku"/>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btn_test">
+            <property name="text">
+             <string>Test</string>
             </property>
            </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
           </item>
          </layout>
-        </widget>
-        <widget class="QWidget" name="layoutWidget_3">
-         <property name="geometry">
-          <rect>
-           <x>107</x>
-           <y>20</y>
-           <width>121</width>
-           <height>42</height>
-          </rect>
-         </property>
-         <layout class="QVBoxLayout" name="verticalLayout_4">
-          <item>
-           <widget class="QLabel" name="lbl_root_sku_name">
-            <property name="text">
-             <string>Sku Name:</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLineEdit" name="le_root_sku_name">
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-        <widget class="QWidget" name="layoutWidget_4">
-         <property name="geometry">
-          <rect>
-           <x>460</x>
-           <y>20</y>
-           <width>121</width>
-           <height>42</height>
-          </rect>
-         </property>
-         <layout class="QVBoxLayout" name="verticalLayout_5">
-          <item>
-           <widget class="QLabel" name="lbl_variable_syntax">
-            <property name="text">
-             <string>Variabl Syntax:</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLineEdit" name="le_variable_syntax">
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-        <widget class="QWidget" name="layoutWidget_5">
-         <property name="geometry">
-          <rect>
-           <x>380</x>
-           <y>20</y>
-           <width>71</width>
-           <height>42</height>
-          </rect>
-         </property>
-         <layout class="QVBoxLayout" name="verticalLayout_6">
-          <item>
-           <widget class="QLabel" name="lbl_variable_count">
-            <property name="text">
-             <string>Variables:</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QSpinBox" name="sbox_variables">
-            <property name="font">
-             <font>
-              <pointsize>12</pointsize>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-        <widget class="QCheckBox" name="chk_active">
-         <property name="geometry">
-          <rect>
-           <x>610</x>
-           <y>40</y>
-           <width>70</width>
-           <height>17</height>
-          </rect>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">font-weight: bold;
+        </item>
+        <item>
+         <widget class="QLabel" name="lblLogo">
+          <property name="minimumSize">
+           <size>
+            <width>165</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>No Company Selected</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QTabWidget" name="tabWidget">
+        <widget class="QWidget" name="tab_sku_info">
+         <attribute name="title">
+          <string>SKU Info</string>
+         </attribute>
+         <widget class="QWidget" name="layoutWidget_2">
+          <property name="geometry">
+           <rect>
+            <x>374</x>
+            <y>19</y>
+            <width>121</width>
+            <height>42</height>
+           </rect>
+          </property>
+          <layout class="QVBoxLayout" name="vlay_root_color">
+           <item>
+            <widget class="QLabel" name="lbl_root_color">
+             <property name="text">
+              <string>Root Color:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="le_root_color">
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="layoutWidget_3">
+          <property name="geometry">
+           <rect>
+            <x>107</x>
+            <y>20</y>
+            <width>252</width>
+            <height>42</height>
+           </rect>
+          </property>
+          <layout class="QVBoxLayout" name="vlay_sku_name">
+           <item>
+            <widget class="QLabel" name="lbl_root_sku_name">
+             <property name="text">
+              <string>Sku Name:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="le_root_sku_name">
+             <property name="minimumSize">
+              <size>
+               <width>250</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="layoutWidget_4">
+          <property name="geometry">
+           <rect>
+            <x>594</x>
+            <y>19</y>
+            <width>152</width>
+            <height>42</height>
+           </rect>
+          </property>
+          <layout class="QVBoxLayout" name="vlay_syntax">
+           <item>
+            <widget class="QLabel" name="lbl_variable_syntax">
+             <property name="text">
+              <string>Variabl Syntax:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="le_variable_syntax">
+             <property name="minimumSize">
+              <size>
+               <width>150</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="layoutWidget_5">
+          <property name="geometry">
+           <rect>
+            <x>514</x>
+            <y>19</y>
+            <width>71</width>
+            <height>43</height>
+           </rect>
+          </property>
+          <layout class="QVBoxLayout" name="vlay_variable_count">
+           <item>
+            <widget class="QLabel" name="lbl_variable_count">
+             <property name="text">
+              <string>Variables:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="sbox_variables">
+             <property name="font">
+              <font>
+               <pointsize>12</pointsize>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QCheckBox" name="chk_active">
+          <property name="geometry">
+           <rect>
+            <x>764</x>
+            <y>44</y>
+            <width>70</width>
+            <height>17</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font-weight: bold;
 font-size: 12px;
 </string>
-         </property>
-         <property name="text">
-          <string>Active</string>
-         </property>
+          </property>
+          <property name="text">
+           <string>Active</string>
+          </property>
+         </widget>
+         <widget class="QWidget" name="layoutWidget">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>20</y>
+            <width>71</width>
+            <height>42</height>
+           </rect>
+          </property>
+          <layout class="QVBoxLayout" name="vlay_sku">
+           <item>
+            <widget class="QLabel" name="lbl_root_sku">
+             <property name="text">
+              <string>SKU:</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="le_root_sku">
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <zorder>layoutWidget</zorder>
+         <zorder>layoutWidget_2</zorder>
+         <zorder>layoutWidget_3</zorder>
+         <zorder>layoutWidget_4</zorder>
+         <zorder>layoutWidget_5</zorder>
+         <zorder>chk_active</zorder>
         </widget>
-        <widget class="QWidget" name="">
-         <property name="geometry">
-          <rect>
-           <x>20</x>
-           <y>20</y>
-           <width>71</width>
-           <height>42</height>
-          </rect>
-         </property>
-         <layout class="QVBoxLayout" name="verticalLayout_2">
-          <item>
-           <widget class="QLabel" name="lbl_root_sku">
-            <property name="text">
-             <string>SKU:</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLineEdit" name="le_root_sku">
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
-            </property>
-           </widget>
-          </item>
-         </layout>
+        <widget class="QWidget" name="tab_2">
+         <attribute name="title">
+          <string>Tab 2</string>
+         </attribute>
         </widget>
-        <zorder>le_root_sku</zorder>
-        <zorder>lbl_root_sku</zorder>
-        <zorder>layoutWidget_2</zorder>
-        <zorder>layoutWidget_3</zorder>
-        <zorder>cbox_company</zorder>
-        <zorder>layoutWidget_4</zorder>
-        <zorder>layoutWidget_5</zorder>
-        <zorder>chk_active</zorder>
        </widget>
-       <widget class="QWidget" name="tab_2">
-        <attribute name="title">
-         <string>Tab 2</string>
-        </attribute>
-       </widget>
-      </widget>
-     </item>
-    </layout>
-   </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+   <zorder>layoutWidget</zorder>
+   <zorder>tabWidget</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1115</width>
+     <width>1111</width>
      <height>21</height>
     </rect>
    </property>
