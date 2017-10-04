@@ -3,7 +3,9 @@
 .project
 .settings/
 
+#db config files
 config.json
+config-qa.json
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
