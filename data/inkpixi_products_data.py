@@ -7,7 +7,6 @@ def connect_mysql():
     # dev = 1
     # live = 0
 
-    # i am just testing a change for .git
     with open('data/config.json', 'r') as f:
         config = json.load(f)
 
