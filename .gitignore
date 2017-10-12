@@ -3,6 +3,9 @@
 .project
 .settings/
 
+# PyCharm
+.idea/
+
 #db config file
 config.json
 

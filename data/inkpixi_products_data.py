@@ -4,10 +4,13 @@ from contextlib import closing
 from PyQt5.QtWidgets import QMessageBox
 
 def connect_mysql():
-    with open('config.json', 'r') as f:
+    # dev = 1
+    # live = 0
+
+    with open('data/config.json', 'r') as f:
         config = json.load(f)
-        
-    conn = mysql.connector.connect(user = config['user'], password = config['password'], host = config['host'], database = config['database'], raise_on_warnings = True) 
+
+    conn = mysql.connector.connect(user = config['user'], password = config['password'], host = config['host'], database = config['database'][0], raise_on_warnings = True)
     
     return conn 
 
