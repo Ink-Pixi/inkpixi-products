@@ -6,6 +6,7 @@
 # PyCharm
 .idea/
 
+#db config file
 config.json
 
 # Byte-compiled / optimized / DLL files
