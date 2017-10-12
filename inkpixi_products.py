@@ -11,6 +11,7 @@ class InkPixiProducts(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super(InkPixiProducts, self).__init__()
 
+        self.company = Company()
         self.setupUi(self)
         
         self.get_companies()
@@ -19,15 +20,15 @@ class InkPixiProducts(QMainWindow, Ui_MainWindow):
         self.btn_test.clicked.connect(self.btn_test_clicked)
         
     def get_companies(self):
-        self.company = Company()
-        lst_companies = self.company.get_companies()
-        
+        lst_companies = get_companies()
+
         for company in lst_companies:
             self.cbox_company.addItem(company[1], company[0])
-    
+
     def cbox_company_changed(self):
-        self.company.set_company(self.cbox_company.currentText(), self.cbox_company.itemData(self.cbox_company.currentIndex()))
-        #clear out the current text.
+        self.company.set_company(self.cbox_company.currentText(),
+                                 self.cbox_company.itemData(self.cbox_company.currentIndex()))
+        # clear out current text
         self.le_search_sku.clear()
 
         try:
@@ -60,7 +61,6 @@ class InkPixiProducts(QMainWindow, Ui_MainWindow):
         else:
             QMessageBox.information(self, 'Chose Company', 'Please choose a valid company.')
 
-    
     def btn_test_clicked(self):
         if not self.company.company_id:
             QMessageBox.information(self, 'Chose Company', 'Please choose a valid company.')
@@ -79,7 +79,7 @@ class InkPixiProducts(QMainWindow, Ui_MainWindow):
             
 
 class Company(object):
-    #this class sets the company name and ID for the application
+    # this class sets the company name and ID for the application
     def __init__(self):
         self.company_name = None
         self.company_id = None
@@ -87,19 +87,20 @@ class Company(object):
     def set_company(self, in_company_name, in_company_id):
         self.company_id = in_company_id
         self.company_name = in_company_name
-    
-    def get_companies(self):
-        lst_companies = ip_data.get_companies()
-        return lst_companies
+
+
+def get_companies():
+    lst_companies = ip_data.get_companies()
+    return lst_companies
+
 
 if __name__ == '__main__':
-    myappid = 'Products'
-    #Windows 7 or x64 only
-    ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid) 
+    my_app_id = 'Products'
+    # Windows 7 or x64 only
+    ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(my_app_id)
         
     app = QApplication(sys.argv)
     ip = InkPixiProducts()
     ip.show()
     
     sys.exit(app.exec_())
-    
