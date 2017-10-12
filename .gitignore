@@ -3,6 +3,9 @@
 .project
 .settings/
 
+# PyCharm
+.idea/
+
 config.json
 
 # Byte-compiled / optimized / DLL files
