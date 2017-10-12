@@ -6,11 +6,12 @@ from PyQt5.QtWidgets import QMessageBox
 def connect_mysql():
     # dev = 1
     # live = 0
-
+    stage = 1
+    
     with open('data/config.json', 'r') as f:
         config = json.load(f)
 
-    conn = mysql.connector.connect(user = config['user'], password = config['password'], host = config['host'], database = config['database'][0], raise_on_warnings = True)
+    conn = mysql.connector.connect(user = config['user'], password = config['password'], host = config['host'], database = config['database'][stage], raise_on_warnings = True)
     
     return conn 
 
