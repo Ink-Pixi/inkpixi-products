@@ -48,10 +48,10 @@ class InkPixiProducts(QMainWindow, Ui_MainWindow):
           
     def sku_completer(self):
         if self.company.company_id:
-            #grab skus information from comapny.
+            # grab skus information from comapny.
             root_skus = ip_data.get_sku_names(self.company.company_id)
             
-            #set up an auto complete for the sku line edit box
+            # set up an auto complete for the sku line edit box
             rsku_completer = QCompleter(root_skus)
             rsku_completer.setCompletionMode(QCompleter.InlineCompletion)
             rsku_completer.setCompletionMode(QCompleter.UnfilteredPopupCompletion)
