@@ -5,6 +5,7 @@ from ui.main import Ui_MainWindow
 from PyQt5.QtWidgets import QApplication, QMainWindow, QCompleter, QMessageBox
 from PyQt5.QtCore import Qt
 from PyQt5 import QtGui
+from PyQt5.QtWidgets import QLabel
 
 
 class InkPixiProducts(QMainWindow, Ui_MainWindow):
