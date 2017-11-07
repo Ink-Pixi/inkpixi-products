@@ -3,6 +3,7 @@ import json
 from contextlib import closing
 from PyQt5.QtWidgets import QMessageBox
 
+
 def connect_mysql():
     # dev = 1
     # live = 0
@@ -14,6 +15,7 @@ def connect_mysql():
     conn = mysql.connector.connect(user = config['user'], password = config['password'], host = config['host'], database = config['database'][stage], raise_on_warnings = True)
     
     return conn 
+
 
 def get_companies():
     con = connect_mysql()
@@ -30,6 +32,7 @@ def get_companies():
     
     return lst_companies
 
+
 def get_sku_names(company_id):
     con = connect_mysql()
     cur = con.cursor()
@@ -43,7 +46,8 @@ def get_sku_names(company_id):
     for result in results:
         lst_results.append(result[0]) 
     return lst_results 
-    
+
+
 def get_sku_info(sku, company_id):
     con = connect_mysql()
     cur = con.cursor()
@@ -52,7 +56,8 @@ def get_sku_info(sku, company_id):
         db.callproc('get_sku_info', [sku, company_id])
         for result in db.stored_results():
             return result.fetchall()
-        
+
+
 def get_available_sizes_per_garm_color(garm_color):
     con = connect_mysql()
     cur = con.cursor()

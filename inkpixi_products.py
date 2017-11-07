@@ -5,6 +5,7 @@ from ui.main import Ui_MainWindow
 from PyQt5.QtWidgets import QApplication, QMainWindow, QCompleter, QMessageBox
 from PyQt5.QtCore import Qt
 from PyQt5 import QtGui
+from PyQt5.QtSql import QSqlDatabase
 
 
 class InkPixiProducts(QMainWindow, Ui_MainWindow):
@@ -33,11 +34,11 @@ class InkPixiProducts(QMainWindow, Ui_MainWindow):
 
         try:
             if self.company.company_id == 2:
-                self.lblLogo.setPixmap(QtGui.QPixmap(":/images/images/retail_logo.png"))
+                self.lbl_logo.setPixmap(QtGui.QPixmap(":/images/images/retail_logo.png"))
             elif self.company.company_id == 3:
-                self.lblLogo.setPixmap(QtGui.QPixmap(":/images/images/wholesale_logo.png"))
+                self.lbl_logo.setPixmap(QtGui.QPixmap(":/images/images/wholesale_logo.png"))
             elif self.company.company_id == 1:
-                self.lblLogo.setPixmap(QtGui.QPixmap(":/images/images/pixi_logo_new.png"))
+                self.lbl_logo.setPixmap(QtGui.QPixmap(":/images/images/pixi_logo_new.png"))
             else:
                 self.lblLogo.setPixmap(QtGui.QPixmap(""))
             
@@ -48,10 +49,10 @@ class InkPixiProducts(QMainWindow, Ui_MainWindow):
           
     def sku_completer(self):
         if self.company.company_id:
-            #grab skus information from comapny.
+            # grab skus information from comapny.
             root_skus = ip_data.get_sku_names(self.company.company_id)
             
-            #set up an auto complete for the sku line edit box
+            # set up an auto complete for the sku line edit box
             rsku_completer = QCompleter(root_skus)
             rsku_completer.setCompletionMode(QCompleter.InlineCompletion)
             rsku_completer.setCompletionMode(QCompleter.UnfilteredPopupCompletion)

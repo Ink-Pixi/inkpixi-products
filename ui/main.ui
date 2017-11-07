@@ -567,7 +567,7 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
          </layout>
         </item>
         <item>
-         <widget class="QLabel" name="lblLogo">
+         <widget class="QLabel" name="lbl_logo">
           <property name="minimumSize">
            <size>
             <width>165</width>
@@ -586,6 +586,9 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
       </item>
       <item>
        <widget class="QTabWidget" name="tabWidget">
+        <property name="currentIndex">
+         <number>1</number>
+        </property>
         <widget class="QWidget" name="tab_sku_info">
          <attribute name="title">
           <string>SKU Info</string>
@@ -760,19 +763,55 @@ font-size: 12px;
          <zorder>layoutWidget_4</zorder>
          <zorder>layoutWidget_5</zorder>
          <zorder>chk_active</zorder>
+         <zorder>sbox_variables</zorder>
+         <zorder>sbox_variables</zorder>
         </widget>
-        <widget class="QWidget" name="tab_2">
+        <widget class="QWidget" name="tab_base_sku">
          <attribute name="title">
           <string>Tab 2</string>
          </attribute>
+         <widget class="QPushButton" name="pushButton">
+          <property name="geometry">
+           <rect>
+            <x>140</x>
+            <y>30</y>
+            <width>75</width>
+            <height>23</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Get</string>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="le_base_sku">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>30</y>
+            <width>113</width>
+            <height>20</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lbl_base_sku">
+          <property name="geometry">
+           <rect>
+            <x>14</x>
+            <y>10</y>
+            <width>81</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Base Sku:</string>
+          </property>
+         </widget>
         </widget>
        </widget>
       </item>
      </layout>
     </item>
    </layout>
-   <zorder>layoutWidget</zorder>
-   <zorder>tabWidget</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
