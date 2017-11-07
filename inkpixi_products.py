@@ -5,6 +5,7 @@ from ui.main import Ui_MainWindow
 from PyQt5.QtWidgets import QApplication, QMainWindow, QCompleter, QMessageBox
 from PyQt5.QtCore import Qt
 from PyQt5 import QtGui
+from PyQt5.QtWidgets import QLabel
 
 
 class InkPixiProducts(QMainWindow, Ui_MainWindow):
@@ -33,11 +34,11 @@ class InkPixiProducts(QMainWindow, Ui_MainWindow):
 
         try:
             if self.company.company_id == 2:
-                self.lblLogo.setPixmap(QtGui.QPixmap(":/images/images/retail_logo.png"))
+                self.lbl_logo.setPixmap(QtGui.QPixmap(":/images/images/retail_logo.png"))
             elif self.company.company_id == 3:
-                self.lblLogo.setPixmap(QtGui.QPixmap(":/images/images/wholesale_logo.png"))
+                self.lbl_logo.setPixmap(QtGui.QPixmap(":/images/images/wholesale_logo.png"))
             elif self.company.company_id == 1:
-                self.lblLogo.setPixmap(QtGui.QPixmap(":/images/images/pixi_logo_new.png"))
+                self.lbl_logo.setPixmap(QtGui.QPixmap(":/images/images/pixi_logo_new.png"))
             else:
                 self.lblLogo.setPixmap(QtGui.QPixmap(""))
             
