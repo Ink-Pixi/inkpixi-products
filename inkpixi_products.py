@@ -74,7 +74,7 @@ class InkPixiProducts(QMainWindow, Ui_MainWindow):
             self.le_root_sku.setText(lst_sku_info[0][0])
             self.le_root_sku_name.setText(lst_sku_info[0][1])
             self.le_root_color.setText(lst_sku_info[0][2])
-            self.sbox_variables.setValue(lst_sku_info[0][3])
+            self.sbox_variables.setValue(int(lst_sku_info[0][3]))
             self.le_variable_syntax.setText(lst_sku_info[0][4])
             self.chk_active.setChecked(lst_sku_info[0][5])
             

@@ -587,7 +587,7 @@ QCheckBox::indicator:disabled, QRadioButton::indicator:disabled
       <item>
        <widget class="QTabWidget" name="tabWidget">
         <property name="currentIndex">
-         <number>1</number>
+         <number>0</number>
         </property>
         <widget class="QWidget" name="tab_sku_info">
          <attribute name="title">
@@ -763,8 +763,6 @@ font-size: 12px;
          <zorder>layoutWidget_4</zorder>
          <zorder>layoutWidget_5</zorder>
          <zorder>chk_active</zorder>
-         <zorder>sbox_variables</zorder>
-         <zorder>sbox_variables</zorder>
         </widget>
         <widget class="QWidget" name="tab_base_sku">
          <attribute name="title">
